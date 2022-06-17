@@ -1,4 +1,6 @@
+const estimateBtn = document.getElementById('estimate-btn');
 const reportBtn = document.getElementById('report-btn');
+
 
 const sendHttpRequest = (method, url, data) => {
   const promise = new Promise((resolve, reject) => {
@@ -27,6 +29,23 @@ const sendHttpRequest = (method, url, data) => {
   });
   return promise;
 };
+
+const estimate = () => {
+  let params = new URLSearchParams(document.location.search.substring(1));
+  let oid = parseInt(params.get("objectId"));
+  let token = params.get("token");
+  console.log(oid);
+  console.log(token);
+  
+  sendHttpRequest('GET', 'https://survey123.arcgis.com/api/featureReport/estimateCredits?featureLayerUrl=https://utility.arcgis.com/usrsvcs/servers/31d10c835ea64510b081691a3657b7e1/rest/services/water/WatURS_Draft_Schema_9_3/FeatureServer/7&queryParameters={"where": "objectId='+oid+'"}&templateItemId=87f0ff7d0ec04950ab9423330b9aea75&token='+token).then(responseData => {
+	console.log(responseData['resultInfo'].cost);
+	//return responseData['resultInfo'].cost
+	document.getElementById("estimate_credits").innerHTML = "Estimated credit cost: " + responseData['resultInfo'].cost;
+	//return x.innerHTML = responseData['resultInfo'].cost;
+	});
+  
+};
+
 
 const createReport = () => {
 	let params = new URLSearchParams(document.location.search.substring(1));
@@ -69,4 +88,6 @@ const checkJobStatus = (jobId, token) => {
 	});	
 };	
 
+
+estimateBtn.addEventListener('click', estimate);
 reportBtn.addEventListener('click', createReport);
