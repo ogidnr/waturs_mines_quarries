@@ -33,8 +33,7 @@ const sendHttpRequest = (method, url, data) => {
 const estimate = () => {
   let params = new URLSearchParams(document.location.search.substring(1));
   let oid = parseInt(params.get("objectId"));
-  //let token = params.get("token");
-  let token = 'AAPK929ef86216ce40ca87aa19cb198e7981dqfzLNwsaKVbRjKZTxxijusKX87ti97VuUXBED41WtJrM0xBn1B0HSMdh9hMp_vo'
+  let token = params.get("token")
   console.log(oid);
   console.log(token);
   
