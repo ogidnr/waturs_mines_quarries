@@ -89,5 +89,5 @@ const checkJobStatus = (jobId, token) => {
 };	
 
 
-estimateBtn.addEventListener('click', estimate);
+//estimateBtn.addEventListener('click', estimate);
 reportBtn.addEventListener('click', createReport);
