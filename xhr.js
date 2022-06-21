@@ -53,7 +53,7 @@ const createReport = () => {
 	let token = params.get("token");
 	console.log(oid);
 	console.log(token);
-	sendHttpRequest('POST', 'https://survey123.arcgis.com/api/featureReport/createSampleReport/submitJob', {
+	sendHttpRequest('POST', 'https://survey123.arcgis.com/api/featureReport/createReport/submitJob', {
 	featureLayerUrl: 'https://utility.arcgis.com/usrsvcs/servers/31d10c835ea64510b081691a3657b7e1/rest/services/water/WatURS_Draft_Schema_9_3/FeatureServer/7',
 	queryParameters: '{"objectIds":"' + oid + '","orderByFields":"||EditDate DESC, objectid ASC"}',
 	templateItemId: '87f0ff7d0ec04950ab9423330b9aea75',
