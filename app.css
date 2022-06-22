@@ -3,10 +3,7 @@ html {
 }
 
 body {
-  margin-bottom: 0;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 0;
+  margin: 1px;
 }
 
 button {
@@ -27,10 +24,4 @@ button:hover,
 button:active {
   background: #8BB2C4;
   border-color: #8BB2C4;
-}
-
-control-center {
-  border: 2px solid #ccc;
-  margin: 5rem;
-  padding: 2rem;
 }
