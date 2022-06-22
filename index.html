@@ -14,15 +14,17 @@
   
 <body>
   <style>
-  div {
-    margin: auto;
-  }
-  p {
-    width: 500px;
+  .center {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   }
   </style>
   <p>To generate a detailed report of your annual water usage submission, click the "Create Report" button below. A message will appear below indicting the report is generating. Once complete, a link to the final pdf report will be available for download and review</p>
-  <div>
+  <div class="center">
     <button id="report-btn">Create Report</button>
   </div>
   <div>
