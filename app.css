@@ -16,6 +16,7 @@ button {
   height:50px;
 }
 
+<style>
 .center {
   margin: 0;
   position: absolute;
@@ -24,6 +25,8 @@ button {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+
+</style>
 
 button:focus {
   outline: none;
