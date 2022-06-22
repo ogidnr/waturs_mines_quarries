@@ -4,10 +4,8 @@ html {
 
 body {
   width: 500px;
-  margin-top: 25px;
-  margin-bottom: 25px;
-  marign-left: 100px;
-  margin-right: 100px;
+  marign-left: auto;
+  margin-right: auto;
 }
 
 button {
