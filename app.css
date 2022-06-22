@@ -2,12 +2,6 @@ html {
   font-family: "Quicksand", sans-serif;
 }
 
-body {
-  width: 500px;
-  marign-left: auto;
-  margin-right: auto;
-}
-
 button {
   font: inherit;
   background: #2e799e;
