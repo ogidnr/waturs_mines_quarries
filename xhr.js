@@ -75,7 +75,7 @@ const createReport = () => {
 const checkJobStatus = (jobId, token) => {
 	sendHttpRequest('GET', 'https://survey123.arcgis.com/api/featureReport/jobs/' + jobId + '?token='+token).then(responseData => {
 		console.log(responseData);
-		document.getElementById("generate_report").innerHTML = "Generating Report. Click to Cancel";
+		document.getElementById("generate_report").innerHTML = responseData['jobStatus'];
 		if (responseData['jobStatus'] == 'esriJobExecuting') {
 			document.getElementById("generate_report").innerHTML = responseData['jobStatus'];
 			setTimeout(checkJobStatus(responseData['jobId'], token), 10000);			
