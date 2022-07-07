@@ -77,11 +77,8 @@ const checkJobStatus = (jobId, token) => {
 		console.log(responseData);
 		document.getElementById("generate_report").innerHTML = "Generating Report. Click to Cancel";
 		if (responseData['jobStatus'] == 'esriJobExecuting') {
-			document.getElementById("generate_report").innerHTML = "Generating Report. Click to Cancel";
-			setTimeout(checkJobStatus(responseData['jobId'], token), 10000);			
-		} else if (responseData['jobStatus'] == 'esriJobFailed') {
 			document.getElementById("generate_report").innerHTML = responseData['jobid'];
-			setTimeout(checkJobStatus(responseData['jobId'], token), 10000);			
+			setTimeout(checkJobStatus(responseData['jobId'], token), 10000);						
 		} else if (responseData['jobStatus'] == 'esriJobSucceeded') {
 			console.log(responseData['resultInfo'].resultFiles[0].url);
 			// document.getElementById("generate_report").innerHTML = responseData['resultInfo'].resultFiles[0].url;
