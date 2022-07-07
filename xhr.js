@@ -77,7 +77,7 @@ const checkJobStatus = (jobId, token) => {
 		console.log(responseData);
 		document.getElementById("generate_report").innerHTML = "Generating Report. Click to Cancel";
 		if (responseData['jobStatus'] == 'esriJobExecuting') {
-			document.getElementById("generate_report").innerHTML = "Generating Report. Click to Cancel";
+			document.getElementById("generate_report").innerHTML = responseData['jobStatus'];
 			setTimeout(checkJobStatus(responseData['jobId'], token), 10000);			
 		} else if (responseData['jobStatus'] == 'esriJobSucceeded') {
 			console.log(responseData['resultInfo'].resultFiles[0].url);
